@@ -12,17 +12,24 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
+  // Only the transition varies: markup, element type and initial styles stay
+  // identical on server and client, so hydration cannot leave a stale style.
   const reduced = useReducedMotion();
-
-  if (reduced) return <div className={className}>{children}</div>;
 
   return (
     <motion.div
-      className={cn(className)}
+      className={cn(
+        "motion-reduce:!transform-none motion-reduce:!opacity-100",
+        className,
+      )}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-12%" }}
-      transition={{ duration: 0.42, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        duration: reduced ? 0 : 0.42,
+        delay: reduced ? 0 : delay,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       {children}
     </motion.div>
