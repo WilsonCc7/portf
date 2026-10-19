@@ -41,7 +41,6 @@ export function GitHubSection() {
             href={`https://github.com/${profile.login}`}
             target="_blank"
             rel="noreferrer"
-            aria-label={copy.github.profileLink}
             className="flex flex-col gap-6 bg-ink p-6 text-paper sm:col-span-2 sm:p-8"
           >
             <div className="flex items-center gap-5">
