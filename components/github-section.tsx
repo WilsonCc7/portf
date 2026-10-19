@@ -49,7 +49,6 @@ export function GitHubSection() {
                 alt={profile.name}
                 width={96}
                 height={96}
-                unoptimized
                 className="size-24 rounded-full"
               />
               <div className="min-w-0">

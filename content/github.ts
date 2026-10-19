@@ -22,7 +22,7 @@ export const profile: ProfileStat = {
   login: "WilsonCc7",
   name: "Wilson Anggriawan",
   bio: "Interested in how the world works. Right now, mostly watching what AI does.",
-  avatar: "https://avatars.githubusercontent.com/u/244941832?v=4",
+  avatar: "/github-avatar.jpg",
   publicRepos: 6,
   followers: 0,
   stars: 1,
