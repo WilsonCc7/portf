@@ -33,10 +33,16 @@ export const projects: Project[] = [
     ],
     media: [
       {
-        src: "/work/withbox/01.webp",
+        src: "/work/withbox/01.png",
         alt: "A dim cinema screen seen from a seat",
         width: 1600,
         height: 1000,
+      },
+      {
+        src: "/work/withbox/02.png",
+        alt: "notify registration screen",
+        width: 1711,
+        height: 1027,
       },
     ],
     sections: [
@@ -145,7 +151,7 @@ export const projects: Project[] = [
     stack: ["Laravel", "PHP", "Blade", "Railway"],
     media: [
       {
-        src: "/work/wacanan/01.webp",
+        src: "/work/wacanan/01.png",
         alt: "An editorial desk with printed pages",
         width: 1600,
         height: 1000,
