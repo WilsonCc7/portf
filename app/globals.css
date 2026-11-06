@@ -9,6 +9,8 @@
   --accent: #1c5ce6;
   --accent-ink: #ffffff;
   --shadow: rgba(20, 23, 26, 0.08);
+  --radius-control: 6px;
+  --radius-card: 12px;
   color-scheme: light;
 }
 
@@ -16,8 +18,8 @@
   --paper: #0e1012;
   --surface: #16191c;
   --ink: #f2f3f4;
-  --ink-soft: #9ba3ad;
-  --line: #2a2f35;
+  --ink-soft: #aab2bc;
+  --line: #31373e;
   --accent: #5b8cff;
   --accent-ink: #0e1012;
   --shadow: rgba(0, 0, 0, 0.4);
@@ -34,6 +36,8 @@
   --color-accent-ink: var(--accent-ink);
   --font-display: var(--font-newsreader);
   --font-sans: var(--font-geist-sans);
+  --radius-control: 6px;
+  --radius-card: 12px;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -81,5 +85,29 @@
   line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+@utility section-y {
+  padding-block: clamp(72px, 8vw, 128px);
+}
+
+@utility section-y-tight {
+  padding-block: clamp(56px, 6vw, 96px);
+}
+
+@utility type-h2 {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+@utility type-lead {
+  max-width: 46ch;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
   color: var(--ink-soft);
 }

@@ -9,6 +9,7 @@ export const site = {
     { label: "Work", href: "/#work" },
     { label: "About", href: "/#about" },
     { label: "Uses", href: "/#uses" },
+    { label: "CV", href: "/#cv" },
   ],
   links: [
     { label: "GitHub", href: "https://github.com/WilsonCc7" },

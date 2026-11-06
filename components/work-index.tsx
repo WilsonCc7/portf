@@ -14,6 +14,7 @@ import { Reveal } from "@/components/reveal";
 import { copy } from "@/content/copy";
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
+import { SectionHeading } from "@/components/section-heading";
 
 export function WorkIndex({ projects }: { projects: Project[] }) {
   const ordered = useMemo(
@@ -52,7 +53,7 @@ export function WorkIndex({ projects }: { projects: Project[] }) {
   return (
     <section
       id="work"
-      className="border-t border-line py-[clamp(64px,9vw,128px)]"
+      className="border-t border-line section-y"
       onPointerMove={(event) => {
         if (!pointer.fine) return;
         x.set(event.clientX + 24);
@@ -60,10 +61,7 @@ export function WorkIndex({ projects }: { projects: Project[] }) {
       }}
     >
       <div className="mx-auto max-w-[1240px] px-6">
-        <p className="label">{copy.work.label}</p>
-        <h2 className="mt-4 max-w-[820px] font-display text-[clamp(32px,4.5vw,56px)] leading-[1] tracking-[-0.015em] text-ink">
-          {copy.work.heading}
-        </h2>
+        <SectionHeading label={copy.work.label}>{copy.work.heading}</SectionHeading>
 
         <div>
           {ordered.map((project, index) => {

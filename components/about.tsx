@@ -4,7 +4,7 @@ import { TimeNow } from "@/components/time-now";
 
 export function About() {
   return (
-    <section id="about" className="border-t border-line py-[clamp(64px,9vw,128px)]">
+    <section id="about" className="border-t border-line section-y">
       <div className="mx-auto max-w-[1240px] px-6">
         <AboutStatement />
 

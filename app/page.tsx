@@ -1,5 +1,6 @@
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
+import { Cv } from "@/components/cv";
 import { Footer } from "@/components/footer";
 import { GitHubSection } from "@/components/github-section";
 import { Hero } from "@/components/hero";
@@ -18,6 +19,7 @@ export default function Home() {
       <GitHubSection />
       <About />
       <Uses />
+      <Cv />
       <Contact />
       <Footer />
     </>

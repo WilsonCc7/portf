@@ -55,7 +55,7 @@ export function AboutStatement() {
   return (
     <p
       ref={target}
-      className="max-w-[22ch] font-display text-[clamp(28px,3.6vw,48px)] leading-[1.1] tracking-[-0.01em] text-ink sm:max-w-[28ch]"
+      className="max-w-[22ch] type-h2 sm:max-w-[28ch]"
     >
       {words.map((word, i) => (
         <Word

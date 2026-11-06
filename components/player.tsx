@@ -27,9 +27,9 @@ const LEAD =
   "mt-6 max-w-[46ch] text-[clamp(17px,1.6vw,20px)] leading-[1.55] tracking-[-0.01em] text-ink-soft";
 const CTA_ROW = "mt-10 flex flex-wrap gap-3";
 const PRIMARY =
-  "inline-flex h-11 items-center justify-center bg-accent px-5 text-sm font-medium text-accent-ink transition-transform duration-[90ms] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center rounded-control bg-accent px-5 text-sm font-medium text-accent-ink transition-transform duration-[90ms] active:scale-[0.98]";
 const GHOST =
-  "inline-flex h-11 items-center justify-center border border-line px-5 text-sm text-ink transition-transform duration-[90ms] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center rounded-control border border-line px-5 text-sm text-ink transition-transform duration-[90ms] active:scale-[0.98]";
 const STILL = "motion-reduce:!transform-none motion-reduce:!opacity-100";
 
 export function HeroCopy({
@@ -96,7 +96,7 @@ function formatTime(seconds: number) {
 }
 
 const VINYL =
-  "w-full max-w-[420px] rounded-full shadow-[0_24px_60px_var(--shadow)] motion-reduce:!animate-none";
+  "w-full max-w-[340px] rounded-full shadow-[0_24px_60px_var(--shadow)] motion-reduce:!animate-none";
 
 function Vinyl({ spinning }: { spinning: boolean }) {
   return (
@@ -235,6 +235,7 @@ export function Player({ tracks }: { tracks: Track[] }) {
             var(--line) var(--value),
             var(--line) 100%
           );
+          border-radius: 0;
         }
         .seek::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -248,6 +249,7 @@ export function Player({ tracks }: { tracks: Track[] }) {
         .seek::-moz-range-track {
           height: 3px;
           background: var(--line);
+          border-radius: 0;
         }
         .seek::-moz-range-progress {
           height: 3px;
@@ -294,7 +296,7 @@ export function Player({ tracks }: { tracks: Track[] }) {
             type="button"
             onClick={() => step(-1)}
             aria-label="Previous track"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-[transform,border-color,color] duration-[120ms] active:scale-[0.94] [@media(hover:hover)_and_(pointer:fine)]:hover:border-ink"
           >
             <SkipBack size={20} weight="regular" aria-hidden />
           </button>
@@ -317,7 +319,7 @@ export function Player({ tracks }: { tracks: Track[] }) {
               }
             }}
             aria-label={playing ? "Pause" : "Play"}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-[transform,border-color,color] duration-[120ms] active:scale-[0.94] [@media(hover:hover)_and_(pointer:fine)]:hover:border-ink"
           >
             {playing ? (
               <Pause size={20} weight="regular" aria-hidden />
@@ -329,7 +331,7 @@ export function Player({ tracks }: { tracks: Track[] }) {
             type="button"
             onClick={() => step(1)}
             aria-label="Next track"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-[transform,border-color,color] duration-[120ms] active:scale-[0.94] [@media(hover:hover)_and_(pointer:fine)]:hover:border-ink"
           >
             <SkipForward size={20} weight="regular" aria-hidden />
           </button>

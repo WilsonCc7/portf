@@ -10,10 +10,10 @@ import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 
-const SECTION_IDS = ["work", "about", "uses"];
+const SECTION_IDS = ["work", "about", "uses", "cv"];
 
 const PRIMARY =
-  "inline-flex h-11 items-center justify-center bg-accent px-5 text-sm font-medium text-accent-ink transition-transform duration-[90ms] active:scale-[0.98]";
+  "inline-flex h-11 items-center justify-center rounded-control bg-accent px-5 text-sm font-medium text-accent-ink transition-transform duration-[90ms] active:scale-[0.98]";
 
 export function SiteNav() {
   const headerRef = useRef<HTMLElement>(null);
@@ -79,6 +79,12 @@ export function SiteNav() {
       <style>{`
         dialog[data-menu]::backdrop {
           background: color-mix(in srgb, var(--ink) 40%, transparent);
+          transition: opacity 200ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+        }
+        @starting-style {
+          dialog[data-menu]::backdrop {
+            opacity: 0;
+          }
         }
         header[data-scrolled] {
           border-bottom: 1px solid var(--line);
@@ -91,6 +97,12 @@ export function SiteNav() {
             background-color: var(--paper);
             -webkit-backdrop-filter: none;
             backdrop-filter: none;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          dialog[data-menu],
+          dialog[data-menu]::backdrop {
+            transition-duration: 1ms;
           }
         }
       `}</style>
@@ -114,7 +126,7 @@ export function SiteNav() {
                 href={item.href}
                 aria-current={isActive(item.href) ? "true" : undefined}
                 className={cn(
-                  "text-sm text-ink-soft transition-colors hover:text-ink",
+                  "text-sm text-ink-soft transition-colors duration-150 [@media(hover:hover)_and_(pointer:fine)]:hover:text-ink",
                   isActive(item.href) && "text-ink",
                 )}
               >
@@ -135,7 +147,7 @@ export function SiteNav() {
               type="button"
               onClick={openMenu}
               aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-[transform,border-color,color] duration-[120ms] active:scale-[0.94] [@media(hover:hover)_and_(pointer:fine)]:hover:border-ink lg:hidden"
             >
               {open ? (
                 <X size={20} weight="regular" aria-hidden />
@@ -158,8 +170,8 @@ export function SiteNav() {
         <motion.div
           initial={false}
           animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-          transition={{ duration: reduced ? 0 : 0.22, ease: "easeOut" }}
-          className="overflow-hidden border-b border-line bg-paper"
+          transition={{ duration: reduced ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
+          className="overflow-hidden rounded-b-card border-b border-line bg-paper"
         >
           <div className="mx-auto flex max-w-[1240px] flex-col gap-10 px-6 pb-14 pt-20">
             <div className="flex items-center justify-between">
@@ -170,7 +182,7 @@ export function SiteNav() {
                 type="button"
                 onClick={closeMenu}
                 aria-label="Close menu"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-[transform,border-color,color] duration-[120ms] active:scale-[0.94] [@media(hover:hover)_and_(pointer:fine)]:hover:border-ink"
               >
                 <X size={20} weight="regular" aria-hidden />
               </button>

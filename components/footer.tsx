@@ -13,7 +13,7 @@ export function Footer() {
             href={`https://github.com/${site.handle}/portf`}
             target="_blank"
             rel="noreferrer"
-            className="text-ink transition-colors hover:text-accent"
+            className="text-ink transition-colors [@media(hover:hover)_and_(pointer:fine)]:hover:text-accent"
           >
             {copy.footer.source}
           </a>

@@ -43,7 +43,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
       <div className="mx-auto max-w-[1240px] px-6 pt-[clamp(64px,9vw,128px)]">
         <Link
           href="/#work"
-          className="inline-flex items-center gap-2 font-mono text-xs text-ink-soft transition-colors hover:text-ink"
+          className="inline-flex items-center gap-2 font-mono text-xs text-ink-soft transition-colors [@media(hover:hover)_and_(pointer:fine)]:hover:text-ink"
         >
           <ArrowLeft size={16} weight="regular" aria-hidden="true" />
           All work
@@ -55,7 +55,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
             <h1 className="mt-4 font-display text-[clamp(40px,6vw,72px)] leading-[1] tracking-[-0.02em] text-ink">
               {project.title}
             </h1>
-            <p className="mt-6 max-w-[52ch] text-[clamp(17px,1.6vw,20px)] leading-[1.55] tracking-[-0.01em] text-ink-soft">
+            <p className="mt-6 type-lead">
               {project.summary}
             </p>
           </div>

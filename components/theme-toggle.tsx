@@ -40,15 +40,15 @@ export function ThemeToggle() {
         } catch {}
       }}
       aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-      className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-ink"
+      className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink transition-[transform,border-color,color] duration-[120ms] active:scale-[0.94] [@media(hover:hover)_and_(pointer:fine)]:hover:border-ink"
     >
       <AnimatePresence initial={false}>
         <motion.span
           key={theme}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: reduced ? 0 : 0.16, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: reduced ? 1 : 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: reduced ? 1 : 0.9 }}
+          transition={{ duration: reduced ? 0 : 0.14, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0 flex items-center justify-center"
         >
           {dark ? (

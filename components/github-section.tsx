@@ -3,6 +3,7 @@ import { ArrowUpRight, Star } from "@phosphor-icons/react/ssr";
 import { copy } from "@/content/copy";
 import { profile, relativeTime, repos } from "@/content/github";
 import { CountUp } from "@/components/count-up";
+import { SectionHeading } from "@/components/section-heading";
 
 const stats = [
   { label: "Repos", value: profile.publicRepos },
@@ -18,18 +19,16 @@ const now = performance.timeOrigin + performance.now();
 
 export function GitHubSection() {
   return (
-    <section id="github" className="border-t border-line py-[clamp(64px,9vw,128px)]">
+    <section id="github" className="border-t border-line section-y">
       <div className="mx-auto max-w-[1240px] px-6">
-        <h2 className="max-w-[820px] font-display text-[clamp(32px,4.5vw,56px)] leading-[1] tracking-[-0.015em] text-ink">
-          {copy.github.heading}
-        </h2>
+        <SectionHeading>{copy.github.heading}</SectionHeading>
 
         <div className="mt-6 flex justify-end">
           <a
             href={`https://github.com/${profile.login}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-ink transition-colors hover:text-accent"
+            className="inline-flex items-center gap-1.5 text-sm text-ink transition-colors [@media(hover:hover)_and_(pointer:fine)]:hover:text-accent"
           >
             {copy.github.profileLink}
             <ArrowUpRight size={16} weight="regular" className="text-ink-soft" />
@@ -41,7 +40,7 @@ export function GitHubSection() {
             href={`https://github.com/${profile.login}`}
             target="_blank"
             rel="noreferrer"
-            className="flex flex-col gap-6 bg-ink p-6 text-paper sm:col-span-2 sm:p-8"
+            className="flex flex-col gap-6 bg-ink p-6 text-paper transition-opacity duration-150 [@media(hover:hover)_and_(pointer:fine)]:hover:opacity-95 sm:col-span-2 sm:p-8"
           >
             <div className="flex items-center gap-5">
               <Image
@@ -79,8 +78,10 @@ export function GitHubSection() {
               href={repo.url}
               target="_blank"
               rel="noreferrer"
-              className={`flex flex-col justify-between gap-8 p-6 ${
-                i % 2 === 0 ? "bg-surface" : "bg-paper"
+              className={`flex flex-col justify-between gap-8 p-6 transition-colors duration-150 ${
+                i % 2 === 0
+                  ? "bg-surface"
+                  : "bg-paper [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface"
               }`}
             >
               <div className="flex items-center justify-between gap-2">
