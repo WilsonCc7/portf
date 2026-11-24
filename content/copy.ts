@@ -2,8 +2,8 @@ export const copy = {
   wordmark: "Wilson",
   hero: {
     line1: "I design calm interfaces.",
-    line2: "And I keep asking why they work.",
-    lead: "Grade 12 PPLG student in Jakarta. I build web apps with Next.js and Laravel, usually mid-experiment.",
+    line2: "Grade 12 student in Jakarta who likes to have fun.",
+    lead: "I survive thing's with Deepseek, Chatgpt, Muse, and my own brain. Not if the tokens runaway.",
     cta: "See my work",
     email: "Email me",
   },
@@ -18,7 +18,7 @@ export const copy = {
   },
   about: {
     statement:
-      "I am Wilson. I would rather build the thing than read about it, which is how a school planner, a blog engine, a streaming platform and a film tracker all ended up on my laptop at the same time. School is SMK Cinta Kasih Tzu Chi, and most of what I know came from breaking something first.",
+      "I am Wilson. I would rather build the thing than read about it, which is how a school planner, a blog engine, a streaming platform and a film tracker all ended up on my laptop at the same time. School is SMK Cinta Kasih Tzu Chi. Most of what I know came from breaking something first, then figuring out how to fix it, which is still the most fun part.",
     facts: [
       { label: "Base", value: "Jakarta, GMT+7" },
       { label: "School", value: "SMK Cinta Kasih Tzu Chi" },
@@ -40,7 +40,7 @@ export const copy = {
   footer: {
     copyright: "© 2026 Wilson Anggriawan",
     location: "Jakarta, GMT+7",
-    colophon: "Next.js, Motion, Vercel",
+    instagram: "Instagram",
     source: "Source",
   },
   notFound: {

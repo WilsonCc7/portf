@@ -29,7 +29,7 @@ export function CopyEmail({ email }: { email: string }) {
       type="button"
       onClick={handleCopy}
       aria-live="polite"
-      className="inline-flex h-11 items-center gap-2 rounded-control border border-line px-4 font-mono text-xs text-ink-soft transition-colors [@media(hover:hover)_and_(pointer:fine)]:hover:text-ink"
+      className="inline-flex h-11 items-center gap-2 rounded-control border border-line bg-surface px-4 font-mono text-xs text-ink-soft transition-colors [@media(hover:hover)_and_(pointer:fine)]:hover:text-ink"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

@@ -8,11 +8,11 @@ type OgFont = {
   name: string;
   data: ArrayBuffer;
   style: "normal";
-  weight: 400;
+  weight: 800;
 };
 
 const FONT_CSS =
-  "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&display=swap";
+  "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&display=swap";
 // satori only reads TrueType and OpenType containers, so ask Google Fonts for
 // the .ttf build instead of the .woff2 one a modern browser UA gets back.
 const FONT_UA = "Mozilla/5.0";
@@ -24,7 +24,7 @@ async function loadFonts(): Promise<OgFont[]> {
   const url = css.match(/url\(([^)]+)\)/)?.[1];
   if (!url) throw new Error("no font url in css");
   const data = await fetch(url).then((res) => res.arrayBuffer());
-  return [{ name: "Newsreader", data, style: "normal", weight: 400 }];
+  return [{ name: "Bricolage Grotesque", data, style: "normal", weight: 800 }];
 }
 
 export default async function Image() {
@@ -45,28 +45,28 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f6f7f8",
-          color: "#14171a",
+          background: "#F8F2E9",
+          color: "#201C18",
           padding: 72,
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
-              fontFamily: "Newsreader",
-              fontSize: 82,
-              lineHeight: 1.05,
-              letterSpacing: "-0.02em",
+              fontFamily: "Bricolage Grotesque",
+              fontSize: 92,
+              lineHeight: 0.98,
+              letterSpacing: "-0.04em",
             }}
           >
             Wilson Anggriawan
           </div>
           <div
             style={{
-              fontFamily: "Newsreader",
+              fontFamily: "Bricolage Grotesque",
               fontSize: 30,
               lineHeight: 1.35,
-              color: "#5b6470",
+              color: "#6B6157",
               maxWidth: 900,
             }}
           >
@@ -79,7 +79,7 @@ export default async function Image() {
             fontFamily: "monospace",
             fontSize: 20,
             letterSpacing: "0.08em",
-            color: "#5b6470",
+            color: "#6B6157",
           }}
         >
           port.wilsb.me
@@ -91,7 +91,7 @@ export default async function Image() {
             bottom: 0,
             width: "100%",
             height: 6,
-            background: "#1c5ce6",
+            background: "#E9542D",
           }}
         />
       </div>

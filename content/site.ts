@@ -5,6 +5,10 @@ export const site = {
   email: "angwilson127@gmail.com",
   location: "Jakarta, GMT+7",
   school: "SMK Cinta Kasih Tzu Chi",
+  instagram: {
+    handle: "wilngry",
+    href: "https://www.instagram.com/wilngry/",
+  },
   nav: [
     { label: "Work", href: "/#work" },
     { label: "About", href: "/#about" },

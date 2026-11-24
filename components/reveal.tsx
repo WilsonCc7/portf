@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { EASE_OUT } from "@/lib/motion";
 
 export function Reveal({
   children,
@@ -19,16 +20,16 @@ export function Reveal({
   return (
     <motion.div
       className={cn(
-        "motion-reduce:!transform-none motion-reduce:!opacity-100",
+        "motion-reduce:!translate-y-0 motion-reduce:!opacity-100",
         className,
       )}
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-12%" }}
+      viewport={{ once: true, margin: "-10%" }}
       transition={{
-        duration: reduced ? 0 : 0.42,
+        duration: reduced ? 0 : 0.6,
         delay: reduced ? 0 : delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: EASE_OUT,
       }}
     >
       {children}

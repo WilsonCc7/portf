@@ -10,8 +10,13 @@ type SectionHeadingProps = {
 export function SectionHeading({ label, className, children }: SectionHeadingProps) {
   return (
     <div className={cn(className)}>
-      {label && <p className="label">{label}</p>}
-      <h2 className="mt-4 max-w-[820px] type-h2">{children}</h2>
+      {label && (
+        <p className="label flex items-center gap-3 text-accent-strong">
+          <span aria-hidden className="h-px w-8 bg-accent" />
+          {label}
+        </p>
+      )}
+      <h2 className="mt-4 type-h2 max-w-[20ch]">{children}</h2>
     </div>
   );
 }

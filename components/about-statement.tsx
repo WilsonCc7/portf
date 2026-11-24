@@ -10,13 +10,13 @@ function Word({
   index,
   total,
   progress,
-  italic,
+  accent,
 }: {
   word: string;
   index: number;
   total: number;
   progress: MotionValue<number>;
-  italic: boolean;
+  accent: boolean;
 }) {
   const opacity = useTransform(
     progress,
@@ -27,7 +27,7 @@ function Word({
   return (
     <motion.span
       style={{ opacity }}
-      className={`motion-reduce:!opacity-100 ${italic ? "italic" : ""}`}
+      className={`motion-reduce:!opacity-100 ${accent ? "text-accent-strong" : ""}`}
     >
       {word}
       {index < total - 1 ? " " : ""}
@@ -50,12 +50,12 @@ export function AboutStatement() {
   });
 
   const words = copy.about.statement.split(" ");
-  const italicIndex = words.findIndex((word) => word.includes("Wilson"));
+  const accentIndex = words.findIndex((word) => word.includes("Wilson"));
 
   return (
     <p
       ref={target}
-      className="max-w-[22ch] type-h2 sm:max-w-[28ch]"
+      className="max-w-[20ch] font-display text-[clamp(28px,4vw,56px)] leading-[1.04] tracking-[-0.03em]"
     >
       {words.map((word, i) => (
         <Word
@@ -64,7 +64,7 @@ export function AboutStatement() {
           index={i}
           total={words.length}
           progress={scrollYProgress}
-          italic={i === italicIndex}
+          accent={i === accentIndex}
         />
       ))}
     </p>
